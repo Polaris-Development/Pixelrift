@@ -8,7 +8,7 @@ class embed(commands.Cog):
 
     @app_commands.command(name="embed", description="Create an embed from a command!")
     async def embed(self, interaction: discord.Interaction, title: str, message: str) -> None:
-        if title == None or message == None:
+        if title is not None or message is not None:
             embed=discord.Embed(title=title, description=message, color=0x00ff00)
             await interaction.response.send_message(embed=embed)
         else:
