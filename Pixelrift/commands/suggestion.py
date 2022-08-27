@@ -14,7 +14,7 @@ class suggestion(commands.Cog):
             guild = self.bot.get_guild(self.guildid)
             channel = guild.get_channel(self.channelid)
 
-            embed = Embed(title="Suggestion", description=suggestion, color=0x4040EC).set_author(name=interaction.user.name)
+            embed = Embed(title="Suggestion", description=suggestion, color=0x335af5).set_author(name=interaction.user.name)
             message = await channel.send(embed=embed)
             emoji = '✅'
             emoji2 = '❌'

@@ -6,7 +6,7 @@ import asyncpg
 import json
 
 
-discord_token = "OTQyMDY3MTg4NjExODI5Nzgw.GB4Z-0.o2_CRp0K_3cZJXDI0O6VG7OIaWHkGn37v1XUFc" # Discord bot token
+discord_token = "" # Discord bot token
 server_id = 992875838116737165 # Place serverid to make commands work instantly in the guild
 
 intents = discord.Intents.all()
@@ -14,6 +14,7 @@ intents.members = True
 
 filename = "json/players.json"
 filename2 = "json/config.json"
+filename3 = "json/reactions.json"
 
 async def load():
     for filename in os.listdir('./commands'):
@@ -38,15 +39,19 @@ class MyBot(commands.Bot):
         global data2
         with open(filename2, "r") as file:
             data2 = json.load(file)
+        global data3
+        with open(filename3, "r") as file:
+            data3 = json.load(file)
 
         client.counting = data2["countingChannel"]
         client.count = data2["count"]
         client.filename = filename
         client.filename2 = filename2
-
-        
+        client.filename3 = filename3
+        client.botname = "PixelRift"
 
         client.data = data
+        client.data3 = data3
 
     async def on_ready(self):
         print("Bot Online")

@@ -8,10 +8,10 @@ class help(commands.Cog):
 
     @app_commands.command(name="help", description="The help command!")
     async def help(self, interaction: discord.Interaction) -> None:
-        embed=discord.Embed(title="PixelRift Help Menu", description=f"These are the commands for PixelRift!\n``/help`` - Brings this help commands" +
+        embed=discord.Embed(title=f"{self.bot.botname} Help Menu", description=f"These are the commands for PixelRift!\n``/help`` - Brings this help commands" +
         "\n`/embed (title) (message)` - Creates an embed!\n``/suggestion (suggestion)`` Send a suggestion to the server!\n``/balance`` - Shows your server balance!" +
-        "\n``/slots (amount)`` - Gambles your money in slots!"
-        , color=0x00ff00)
+        "\n``/slots (amount)`` - Gambles your money in slots!\n``/reaction (messageid) (emoji) (role)`` - Adds a reaction to the associated message!"
+        , color=0x335af5)
         await interaction.response.send_message(embed=embed)
 
 async def setup(bot):

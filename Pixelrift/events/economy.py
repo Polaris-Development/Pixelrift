@@ -31,11 +31,11 @@ class economy(commands.Cog):
     @app_commands.command(name="balance", description="Shows your balance!")
     async def balance(self, interaction: discord.Interaction) -> None:
         if str(interaction.user.id) not in self.bot.data:
-            embed=discord.Embed(title="You do not have a profile!", description="Type any message to automatically create a profile", color=0x00ff00)
+            embed=discord.Embed(title="You do not have a profile!", description="Type any message to automatically create a profile", color=0x335af5)
             await interaction.response.send_message(embed=embed)
         else:
             balance = self.bot.data[f'{interaction.user.id}']["balance"]
-            embed=discord.Embed(title="Profile Statistics!", description=f"Balance: ${balance}", color=0x00ff00)
+            embed=discord.Embed(title="Profile Statistics!", description=f"Balance: ${balance}", color=0x335af5)
             await interaction.response.send_message(embed=embed)
         
     @app_commands.command(name="slots", description="Plays slots!")
@@ -135,7 +135,7 @@ class economy(commands.Cog):
                 embedVar = discord.Embed(description = f"<:x:927596575407079504> Invalid Parameters entered! Use /slots [amount]")
                 await interaction.response.send_message(embed=embedVar)
         else:
-            embed=discord.Embed(title="You do not have a profile!", description="Type any message to automatically create a profile", color=0x00ff00)
+            embed=discord.Embed(title="You do not have a profile!", description="Type any message to automatically create a profile", color=0x335af5)
             await interaction.response.send_message(embed=embed)
 
         

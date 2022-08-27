@@ -7,7 +7,7 @@ class logs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.guildid = 992875838116737165
-        self.channelid = 994614166524534844
+        self.channelid = 1011665754569056392
 
     @commands.Cog.listener()
     async def on_member_join(self, member):

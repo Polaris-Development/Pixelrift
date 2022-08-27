@@ -9,7 +9,7 @@ class embed(commands.Cog):
     @app_commands.command(name="embed", description="Create an embed from a command!")
     async def embed(self, interaction: discord.Interaction, title: str, message: str) -> None:
         if title is not None or message is not None:
-            embed=discord.Embed(title=title, description=message, color=0x00ff00)
+            embed=discord.Embed(title=title, description=message, color=0x335af5)
             await interaction.response.send_message(embed=embed)
         else:
             await interaction.response.send_message("Please use the correct format!")
